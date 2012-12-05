@@ -1,0 +1,45 @@
+<% @page_title = t(:entries) %>
+
+<div class="pageTitle"><%= t :entries %></div>
+<div class="grid">    
+  <table class="grid" cellspacing="4">
+    <tr>
+      <td class="title"></td>
+      <td class="title"><%= t :name %></td>
+      <td class="title"><%= t :cidr %></td>
+      <td class="title"><%= t :description %></td>      
+      <td class="title"><%= t :create_at %></td>
+      <td class="title"><%= t :update_at %></td>
+      <td class="title"><%= t :create_by %></td>
+      <td class="title"><%= t :actions %></td>
+    </tr>
+    <% index = 0 %>
+    <% @subnets.each do |subnet| %>
+    <% index += 1 %>
+    <% class_name = index % 2 == 0 ? 'even' : 'odd' %>
+    <tr class='<%= class_name %>'>
+      <td class="index"><%= index %></td>
+      <td><%= subnet.name %></td>
+      <td><%= subnet.cidr %></td>
+      <td><%= subnet.description %></td>      
+      <td><%= subnet.created_at.to_s(:short) %></td>
+      <td><%= subnet.updated_at.to_s(:short) %></td>
+      <td><%= subnet.author.name.length > 0 ? subnet.author.name : subnet.author.username %></td>
+      <td class="actions">
+        <%= link_to(t(:servers), {:controller => 'servers', :action => 'list', :id => subnet.id}) %>
+        |
+        <%= link_to(t(:show), {:action => 'show', :id => subnet.id}) %>
+        |        
+        <%= link_to(t(:edit), {:action => 'edit', :id => subnet.id}) %>
+        |
+        <%= link_to(t(:delete), {:action => 'delete', :id => subnet.id}) %>
+      </td>
+    </tr>
+    <% end %>
+    <tr>
+      <td colspan="8" class="pagination">
+        <%= will_paginate @subnets, :previous_label => t(:previous), :next_label => t(:next) %>
+      </td>
+    </tr>
+  </table>  
+</div>  

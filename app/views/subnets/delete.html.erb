@@ -1,0 +1,15 @@
+<% @page_title = t(:delete_subnet) %>
+
+<div class="form">
+  <%= form_for(:subnet, :url => {:action => 'destroy', :id => @subnet.id}) do |f| %>
+  
+    <%= t :sure_to_delete_subnet %>
+  
+  <p>
+    <%= t :subnet %>: <b><%= @subnet.name %></b>
+  </p>
+
+  <%= link_to(t("no1"), {:action => 'list'}, :class => "button") %>
+  <%= submit_tag(t(:yes1)) %>
+  <% end %>
+</div>

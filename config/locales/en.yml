@@ -1,0 +1,105 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+en:
+  account_disabled: "Your account has been disabled!"
+  actions: "Actions"
+  app_title: "Diminut"  
+  cidr: "CIDR"
+  change_name: "Change Name"
+  change_password: "Change Password"
+  create_at: "Created"
+  create_by: "Author"
+  confirm_password: "Confirm Password"
+  confirm_password_does_not_match: "Confirmation of new password does not match!"
+  copyright: "Copyright"
+  delete: "Delete"
+  delete_subnet: "Delete Subnet"
+  deleted_successfully: "Deleted Successfully."
+  description: "Description"
+  disabled: "Disabled"
+  diminut: "Diminut"
+  does_not_match: "does not match!"
+  edit: "Edit"
+  editor: "Editor"
+  edit_subnet: "Edit Subnet"
+  entries: "Servers"
+  enter_new_password: "New password can not be blank!"
+  enter_old_password: "Please enter your current password."
+  edit_user: "Edit User"
+  errors: "Errors"
+  emgraft: "Emgraft Systems"
+  ip: "IP"
+  list: "List"
+  login: "Sign In"
+  logged_in_successfully:  "You have signed in successfully."
+  logged_out_successfully: "You have signed out successfully."
+  model: "Model"
+  name: "Name"
+  next: "Next"
+  new: "New"
+  new_subnet: "New Subnet"
+  new_user: "New User"
+  new_password: "New Password"
+  no1: "No"
+  of: of
+  old_password: Current Password
+  operating_system: "Operating System"
+  password: "Password"
+  previous : "Previous"
+  public_ip: "Public IP"
+  reset_password: "Reset Password"
+  save: "Save"
+  servers: "Servers"
+  server_name: "Server Name"
+  show: "Show"
+  subnets: "Subnets"  
+  saved_successfully: "Saved Successfully."
+  sure_to_delete_subnet: "Are you sure you want to delete this subnet?"
+  sure_to_delete_user: "Are you sure you want to delete this user?"
+  type: "Type"
+  update_at: "Updated"
+  username: "Username"
+  users: "Users"
+  unknown_error: "Unknown Error!!!"
+  viewer: "Viewer"
+  wrong_username_or_password: "Wrong username or password!"
+  wrong_old_password: "Old password is incorrect!"
+  yes1: "Yes"  
+  you_have_not_logged_in: "You have redirected to sign in page since you had not signed in."
+  you_do_not_have_edit_privilege: "You do not have privilege to edit or create."
+  
+  
+  
+  activerecord:
+    attributes:
+      subnet:
+        name: "Name"
+        cidr: "CIDR"
+      user:
+        username: "Username"
+        name: "Name"
+        password: "Password"
+        plain_password: "Password"   
+      entry:
+        ip: "IP"       
+    errors:
+      models:
+        user:
+          attributes:
+            username:
+              blank: "can not be empty!"
+              too_short: "should be at least 4 characters!"
+              too_long: "should be at most 25 characters!"
+              invalid: "should be consist of letters, numbers and _ character and no space is allowed."
+            plain_password:
+              too_short: "is too short!"
+        subnet:
+          attributes:            
+            author:
+              blank: "has not set!"
+            name:
+              blank: "can not be empty!"   
+            cidr:
+              blank: "can not be empty!"
+              invalid: "is invalid! The correct format is something like 10.0.0.0/8"            

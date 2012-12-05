@@ -1,0 +1,293 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree 
+ *= require bootstrap-datepicker
+ */
+
+@import 'bootsrap';
+
+/* Google fonts collection for this app
+ *
+
+ font-family: 'Anaheim', sans-serif;
+ font-family: 'Paprika', cursive;
+
+ */
+
+body {
+  font-family: 'Anaheim', sans-serif;
+  margin: 50px;
+  color: #AAA;
+  /*background-color: #EEE;*/
+}
+
+div.main {
+  /*box-shadow: 4px 4px 4px 1px #EFEFEF;*/
+  border: 0px dashed #EEE;
+  padding: 25px;
+  background-color: #EFEFEF;
+  border-radius: 10px;
+}
+
+div.main div.top {
+  margin-bottom: 20px;
+}
+
+div.main div.top div.title {
+  font-family: 'Paprika', cursive;
+  font-size: 24px;
+}
+
+div.menu {
+  margin-bottom: 30px;
+}
+
+div.content {
+  min-height: 300px;
+}
+
+div.bottom {
+  text-align: center;
+  padding-top: 20px;
+}
+
+div.bottom div.copyright {
+  letter-spacing: 0.2em;
+  font-size: 12px;
+  color: #777;
+  text-shadow: 0px 0px 1px #777;
+}
+
+div.pageTitle {
+  font-size: 16px;  
+  font-weight: bold;
+  padding: 2px 0px 10px 0px;
+}
+
+input[type=text], input[type=password], textarea {
+  background-color: white;
+  border: 1px solid #DDD;
+  color: black;
+  padding: 2px;
+}
+
+input[type=text]:focus, input[type=password]:focus, textarea:focus {
+  box-shadow: 0px 0px 2px 3px #ddF;
+}
+
+input[type=button], input[type=submit], input[type=reset], button, a.button {
+  text-decoration: none;
+  display: inline-block;
+  cursor: default;
+  text-align: center;
+  background-color: #DDD;
+  padding: 6px;
+  color: #666;
+  font-family: 'Anaheim', sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  border: none;
+  min-width: 80px;
+  box-shadow: 2px 2px 2px 0px #BBB;
+  border-radius: 3px;
+  
+background: #e2e2e2; /* Old browsers */
+background: -moz-linear-gradient(top,  #e2e2e2 0%, #dbdbdb 50%, #d1d1d1 51%, #fefefe 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e2e2e2), color-stop(50%,#dbdbdb), color-stop(51%,#d1d1d1), color-stop(100%,#fefefe)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', endColorstr='#fefefe',GradientType=0 ); /* IE6-9 */
+}
+
+input[type=button]:active, input[type=submit]:active, input[type=reset]:active, button:active, a.button:active {
+  box-shadow: 0px 0px 0px 0px;
+  position: relative;
+  top: 2px;
+  left: 2px;
+}
+
+input[type=button]:focus, input[type=submit]:focus, input[type=reset]:focus, a.button:focus {
+
+}
+
+div.form {
+  padding: 20px;
+  border: 1px dashed #aaa;
+}
+
+form {
+  padding: 0px;
+  margin: 0px;
+}
+
+table.form {
+
+}
+
+table.form td {
+  vertical-align: top;
+  padding: 2px;
+}
+
+table.form td.caption {
+
+}
+
+table.form td.data {
+  white-space: nowrap;
+}
+
+td.buttons {
+  text-align: right;
+}
+
+div.messages {
+  margin-top: 10px;
+}
+
+div.field_with_errors {
+  display: inline;
+}
+
+div.field_with_errors input {
+  border-color: red;
+}
+
+div.name {
+  color: black;
+  font-weight: bold;
+}
+
+table.item td {
+  white-space: nowrap;
+  color: black;
+}
+
+div.messages div {
+  padding: 5px;
+  text-align: center;
+  border-radius: 3px;
+  width: 80%;
+  margin: 0px auto;
+}
+
+div.messages div.notice {  
+  background-color: orange;
+  color: white;
+}
+
+div.messages div.error {  
+  background-color: red;
+  color: white;
+  font-weight: bold;
+}
+
+div.error ul {
+  color: red;
+}
+
+div.messages div.info {  
+  background-color: #DDE;
+  color: black; 
+}
+
+table.grid {
+  width: 100%;  
+  font-family: arial;
+  font-size: 12px;
+  box-shadow: 0px 0px 4px 1px #DDD;  
+}
+
+table.grid tr.even td {
+  background-color: #FAFAFA;
+  background-image: url(<%= asset_path('light-back2.png') %>);
+} 
+
+table.grid td.title {
+  background-image: url(<%= asset_path('back-title.png') %>);
+  color: white;
+  text-align: center;
+  font-weight: bold;
+}
+
+table.grid tr.odd td {
+  background-image: url(<%= asset_path('dark-back2.png') %>);
+}
+
+table.grid tr:hover td {  
+  background-image: url(<%= asset_path('hover-back2.png') %>);
+} 
+
+table.grid tr:hover td.title {    
+  background-image: url(<%= asset_path('back-title.png') %>);
+}
+
+table.grid td.pagination {  
+  background-color: transparent;
+}
+
+table.grid tr:hover td.pagination {  
+  background-image: none;
+} 
+
+table.grid td {
+ background-color: white;
+ color: black; 
+ padding: 2px;
+ 
+}
+
+
+table.grid td.actions, table.grid td.index {
+    text-align: center;    
+}
+
+table.grid td.actions a {
+  text-decoration: none;
+  color: brown; 
+}
+
+table.grid td.actions a:visited {  
+  color: #640505; 
+}
+
+div.pagination {
+  font-size: 10px;
+  font-weight: bold;
+}
+
+div.pagination em.current {  
+  font-style: normal;
+}
+
+div.pagination a {
+  text-decoration: none;
+}
+
+p {
+  color: black;
+}
+
+div.second_links {
+  padding-bottom: 6px;
+}
+
+div.second_links a {
+  text-decoration: none;
+  color: red;
+}
+
+div.second_links a:visited {
+  color: brown;
+}

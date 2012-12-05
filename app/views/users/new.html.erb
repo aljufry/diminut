@@ -1,0 +1,54 @@
+<% @page_title = t(:new_user) %>
+
+<div class="pageTitle">
+  <%= t(:new_user) %>
+</div>
+
+<div class="form">
+  <%= form_for(:user, :url => {:action => 'create'}) do |f| %>
+  <% if @user.errors.any? %>
+
+  <div class="error">
+    <ul>
+      <% @user.errors.full_messages.each do |message| %>
+      <li>
+        <%= message %>
+      </li>
+      <% end %>
+    </ul>
+  </div>
+  <% end %>
+  <table class="form">
+    <tr>
+      <td class="caption"><label for="name"><%= f.label(:username) %>:</label></td>
+      <td class="data"> <%= f.text_field(:username, :maxlength => 255, :size => 30)  %> </td>
+    </tr>
+    <tr>
+      <td class="caption"><label for="name"><%= f.label(:name) %>:</label></td>
+      <td class="data"> <%= f.text_field(:name, :maxlength => 255, :size => 30)  %> </td>
+    </tr>
+    <tr>
+      <td class="caption"><label for="name"><%= f.label(:plain_password, t(:password)) %>:</label></td>
+      <td class="data"> <%= f.text_field(:plain_password, :maxlength => 255, :size => 30)  %> </td>
+    </tr>
+    <tr>
+      <td class="caption"><label for="name"><%= f.label(:viewer) %>:</label></td>
+      <td class="data"> <%= f.check_box(:viewer)  %> </td>
+    </tr>
+    <tr>
+      <td class="caption"><label for="name"><%= f.label(:editor) %>:</label></td>
+      <td class="data"> <%= f.check_box(:editor)  %> </td>
+    </tr>
+    <tr>
+      <td class="buttons" colspan="2"> <%= submit_tag(t(:save)) %>
+      </td>      
+    </tr>
+  </table>
+  <script type="text/javascript">
+    var input = $("#user_username");
+    if (input != null && input != undefined) {
+      input.focus();
+    }
+  </script>
+  <% end %>
+</div>

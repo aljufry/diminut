@@ -1,0 +1,22 @@
+# malay language file
+my:     
+  actions: "Actions"
+  cidr: "CIDR"
+  create_at: "Created"
+  create_by: "Author"
+  description: "Description"  
+  name: "Name"
+  subnets: "Subnets"
+  update_at: "Updated"
+  
+
+
+  activerecord:
+    errors:
+      models:
+        subnet:
+          attributes:
+            author:
+              blank: "has not set!?!?!?!"
+            name:
+              blank: "can not be empty!?!?!?!" 

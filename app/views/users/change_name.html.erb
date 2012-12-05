@@ -1,0 +1,37 @@
+<% @page_title = t(:change_name) %>
+
+<div class="pageTitle">
+  <%= t(:change_name) %>
+</div>
+
+<div class="form">
+  <%= form_for(:user, :url => {:action => 'update_name', :id => @user.id}) do |f| %>
+  <% if @user.errors.any? %>
+
+  <div class="error">
+    <ul>
+      <% @user.errors.full_messages.each do |message| %>
+      <li>
+        <%= message %>
+      </li>
+      <% end %>
+    </ul>
+  </div>
+  <% end %>
+  <table class="form">    
+    <tr>
+      <td class="caption"><label for="name"><%= f.label(:name) %>:</label></td>
+      <td class="data"> <%= f.text_field(:name, :maxlength => 255, :size => 30)  %> </td>    
+    <tr>
+      <td class="buttons" colspan="2"> <%= submit_tag(t(:save)) %>      
+      </td>
+    </tr>
+  </table>
+  <script type="text/javascript">
+    var input = $("#user_name");
+    if (input != null && input != undefined) {
+      input.focus();
+    }
+  </script>
+  <% end %>
+</div>

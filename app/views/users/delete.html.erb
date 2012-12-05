@@ -1,0 +1,15 @@
+<% @page_title = t(:delete_user) %>
+
+<div class="form">
+  <%= form_for(:user, :url => {:action => 'destroy', :id => @user.id}) do |f| %>
+  
+    <%= t :sure_to_delete_user %>
+  
+  <p>
+    <%= t :user %>: <b><%= @user.username %></b>
+  </p>
+
+  <%= link_to(t("no1"), {:action => 'list'}, :class => "button") %>
+  <%= submit_tag(t(:yes1)) %>
+  <% end %>
+</div>

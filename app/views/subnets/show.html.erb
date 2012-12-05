@@ -1,0 +1,39 @@
+<% @page_title = t(:subnet) %>
+
+<div class="form">
+  <div class="name">
+    <%= @subnet.name %>
+  </div>
+  <table class="item">
+    <tr>
+      <td class="title"><%= t :name %>:</td>
+      <td><%= @subnet.name %></td>
+    </tr>
+    <tr>
+      <td class="title"><%= t :cidr %>:</td>
+      <td><%= @subnet.cidr %></td>
+    </tr>
+    <tr>
+      <td class="title"><%= t :description %>:</td>
+      <td><%= @subnet.description %></td>
+    </tr>
+    <tr>
+      <td class="title"><%= t :create_at %>:</td>
+      <td><%= @subnet.created_at.to_s(:long) %></td>
+    </tr>
+    <tr>
+      <td class="title"><%= t :update_at %>:</td>
+      <td><%= @subnet.updated_at.to_s(:long) %></td>
+    </tr>
+    <tr>
+      <td class="title"><%= t :create_by %>:</td>
+      <td><%= @subnet.author.name.length > 0 ? @subnet.author.name : @subnet.author.username %></td>
+    </tr>    
+    <tr>
+      <td class="buttons" colspan="2">        
+        <%= link_to(t("list"), {:action => 'list'}, :class => "button") %>
+        <%= link_to(t("edit"), {:action => 'edit', :id => @subnet.id}, :class => "button") %>
+      </td>
+    </tr>
+  </table>
+</div>

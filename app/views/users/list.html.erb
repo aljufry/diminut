@@ -1,0 +1,41 @@
+<% @page_title = t(:users) %>
+
+<div class="pageTitle"><%= t :users %></div>
+<div class="grid">		
+	<table class="grid" cellspacing="4">
+		<tr>
+			<td class="title"></td>
+			<td class="title"><%= t :username %></td>
+			<td class="title"><%= t :name %></td>
+			<td class="title"><%= t :type %></td>
+			<td class="title"><%= t :create_at %></td>
+			<td class="title"><%= t :update_at %></td>			
+			<td class="title"><%= t :actions %></td>
+		</tr>
+		<% index = 0 %>
+		<% @users.each do |user| %>
+		<% index += 1 %>
+		<% class_name = index % 2 == 0 ? 'even' : 'odd' %>
+		<tr class='<%= class_name %>'>
+			<td class="index"><%= index %></td>
+			<td><%= user.username %></td>
+			<td><%= user.name %></td>
+			<td><%= user.editor ? t(:editor) : user.viewer ? t(:viewer) : t(:disabled) %></td>			
+			<td><%= user.created_at.to_s(:short) %></td>
+			<td><%= user.updated_at.to_s(:short) %></td>			
+			<td class="actions">				
+				<%= link_to(t(:edit), {:action => 'edit', :id => user.id}) %>
+				|
+				<%= link_to(t(:reset_password), {:action => 'reset_password', :id => user.id}) %>
+				|
+        <%= link_to(t(:delete), {:action => 'delete', :id => user.id}) %>
+			</td>
+		</tr>
+		<% end %>
+		<tr>
+		  <td colspan="8" class="pagination">
+		    <%= will_paginate @users, :previous_label => t(:previous), :next_label => t(:next) %>
+		  </td>
+		</tr>
+	</table>	
+</div>	

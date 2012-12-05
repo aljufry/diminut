@@ -1,0 +1,28 @@
+<% @page_title = t(:login) %>
+
+<div class="pageTitle"><%= t :login %></div>
+
+<div class="form">
+  <%= form_tag(:action => 'do_login') do %>
+  <table class="form">
+    <tr>      
+      <td class="caption"><%= label_tag(:username, t(:username) + ":") %></td>
+      <td class="data"><%= text_field_tag(:username) %>
+    </tr>
+    <tr>
+      <td class="caption"><%= label_tag(:password, t(:password) + ":") %></td>
+      <td class="data"><%= password_field_tag(:password) %>
+    </tr>
+    <tr>      
+      <td colspan="2" class="buttons"><%= submit_tag(t(:login)) %>
+    </tr>
+  </table>
+  <script type="text/javascript">
+    var username = $('#username');
+    if (username != undefined && username != null) {
+      username.focus();
+    }
+  </script>
+  <% end %>
+</div>
+

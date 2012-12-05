@@ -1,0 +1,50 @@
+<% @page_title = t(:servers) %>
+
+<% if @subnet != nil %>
+<div class="pageTitle">
+  <%= t :servers %> <%= t :of %> <%= @subnet.name %>
+</div>
+<div class="second_links">
+  <%= link_to(t(:new_server), :action => 'new', :id => @subnet.id)%>
+</div>
+<div class="grid">
+  <table class="grid" cellspacing="4">
+    <tr>
+      <td class="title"></td>
+      <td class="title"><%= t :server_name %></td>
+      <td class="title"><%= t :ip %></td>
+      <td class="title"><%= t :public_ip %></td>
+      <td class="title"><%= t :model %></td>
+      <td class="title"><%= t :operating_system %></td>
+      <td class="title"><%= t :create_at %></td>
+      <td class="title"><%= t :update_at %></td>
+      <td class="title"><%= t :create_by %></td>
+      <td class="title"><%= t :actions %></td>
+    </tr>
+    <% index = 0 %>
+    <% @servers.each do |server| %>
+    <% index += 1 %>
+    <% class_name = index % 2 == 0 ? 'even' : 'odd' %>
+    <tr class='<%= class_name %>'>
+      <td class="index"><%= index %></td>
+      <td><%= server.server_name %></td>
+      <td><%= server.ip %></td>
+      <td><%= server.public_ip %></td>
+      <td><%= server.model %></td>
+      <td><%= server.operating_system %></td>
+      <td><%= server.created_at.to_s(:short) %></td>
+      <td><%= server.updated_at.to_s(:short) %></td>
+      <td><%= server.author.name.length > 0 ? server.author.name : server.author.username %></td>
+      <td class="actions"> <%= link_to(t(:show), {:action => 'show', :id => server.id}) %>
+      |
+      <%= link_to(t(:edit), {:action => 'edit', :id => server.id}) %>
+      |
+      <%= link_to(t(:delete), {:action => 'delete', :id => server.id}) %> </td>
+    </tr>
+    <% end %>
+    <tr>
+      <td colspan="8" class="pagination"> <%= will_paginate @servers, :previous_label => t(:previous), :next_label => t(:next) %> </td>
+    </tr>
+  </table>
+</div>
+<% end %>
