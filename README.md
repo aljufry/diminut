@@ -1,0 +1,4 @@
+diminut
+=======
+
+Manage server information
