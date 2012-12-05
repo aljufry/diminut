@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
 
   before_filter :set_locale
   #before_filter :has_logged_in
+  
   def self.year
     @@year = Date.today.year
     return @@year
