@@ -82,7 +82,19 @@ en:
         password: "Password"
         plain_password: "Password"   
       entry:
-        ip: "IP"       
+        ip: "IP"
+        public_ip: "Public IP"
+        server_name: "Server Name"
+        model: "Model"
+        operating_system: "Operating System"
+        serial_number: "Serial Number"
+        warranty: "Warranty"
+        location: "Location"
+        segment: "Segment"
+        application: "Application"
+        username: "Username"
+        password: "Password"
+        remarks: "Remarks"  
     errors:
       models:
         user:
@@ -94,6 +106,25 @@ en:
               invalid: "should be consist of letters, numbers and _ character and no space is allowed."
             plain_password:
               too_short: "is too short!"
+        entry:
+          attributes:
+            subnet:
+              blank: "is null!"
+            server_name:
+              blank: "can not be empty!"
+            model:
+              blank: "can not be empty!"
+            operating_system:
+              blank: "can not be empty!"
+            serial_number:
+              blank: "can not be empty!"
+            ip:
+              blank: "can not be empty!"
+              too_long: "is too long!"
+              invalid: "is invalid!"
+            public_ip:
+              too_long: "is too long!"
+              invalid: "is invalid!"  
         subnet:
           attributes:            
             author:

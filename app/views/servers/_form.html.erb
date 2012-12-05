@@ -27,6 +27,30 @@
     <td class="caption"><label for="name"><%= f.label(:warranty) %>:</label></td>
     <td class="data"> <%= f.text_field(:warranty, :size => 10, :class => "datepicker")  %> </td>
   </tr>
+  <tr>
+    <td class="caption"><label for="name"><%= f.label(:location) %>:</label></td>
+    <td class="data"> <%= f.text_field(:location, :maxlength => 200, :size => 30)  %> </td>
+  </tr>
+  <tr>
+    <td class="caption"><label for="name"><%= f.label(:segment) %>:</label></td>
+    <td class="data"> <%= f.text_field(:segment, :maxlength => 100, :size => 30)  %> </td>
+  </tr>
+  <tr>
+    <td class="caption"><label for="name"><%= f.label(:application) %>:</label></td>
+    <td class="data"> <%= f.text_field(:application, :maxlength => 100, :size => 30)  %> </td>
+  </tr>
+  <tr>
+    <td class="caption"><label for="name"><%= f.label(:username) %>:</label></td>
+    <td class="data"> <%= f.text_field(:username, :maxlength => 200, :size => 30)  %> </td>
+  </tr>
+  <tr>
+    <td class="caption"><label for="name"><%= f.label(:password) %>:</label></td>
+    <td class="data"> <%= f.text_field(:password, :maxlength => 200, :size => 30)  %> </td>
+  </tr>
+  <tr>
+    <td class="caption"><label for="name"><%= f.label(:remarks) %>:</label></td>
+    <td class="data"> <%= f.text_area(:remarks, :maxlength => 200, :cols => 50, :rows => 10)  %> </td>
+  </tr>
   
   <tr>
     <td class="buttons" colspan="2"> 
