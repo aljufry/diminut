@@ -1,0 +1,49 @@
+<% @page_title = t(:server) %>
+
+<div class="form">
+  <div class="name"><%= @server.server_name %></div>
+  <table class="item">
+    <tr>
+      <td class="title"><%= t :name %>:</td>
+      <td><%= @server.server_name %></td>
+    </tr>
+    <tr>
+      <td class="title"><%= t :model %>:</td>
+      <td><%= @server.model %></td>
+    </tr>
+    <tr>
+      <td class="title"><%= t :serial_number %>:</td>
+      <td><%= @server.serial_number %></td>
+    </tr>
+    <tr>
+      <td class="title"><%= t :operating_system %>:</td>
+      <td><%= @server.operating_system %></td>
+    </tr>
+    <tr>
+      <td class="title"><%= t :ip %>:</td>
+      <td><%= @server.ip %></td>
+    </tr>
+    <tr>
+      <td class="title"><%= t :public_ip %>:</td>
+      <td><%= @server.public_ip %></td>
+    </tr>
+    <tr>
+      <td class="title"><%= t :create_at %>:</td>
+      <td><%= @server.created_at.to_s(:long) %></td>
+    </tr>
+    <tr>
+      <td class="title"><%= t :update_at %>:</td>
+      <td><%= @server.updated_at.to_s(:long) %></td>
+    </tr>
+    <tr>
+      <td class="title"><%= t :create_by %>:</td>
+      <td><%= @server.author.name.length > 0 ? @server.author.name : @server.author.username %></td>
+    </tr>    
+    <tr>
+      <td class="buttons" colspan="2">        
+        <%= link_to(t("list"), {:action => 'list'}, :class => "button") %>
+        <%= link_to(t("edit"), {:action => 'edit', :id => @subnet.id}, :class => "button") %>
+      </td>
+    </tr>
+  </table>
+</div>

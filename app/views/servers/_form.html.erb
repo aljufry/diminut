@@ -25,7 +25,7 @@
   </tr>
   <tr>
     <td class="caption"><label for="name"><%= f.label(:warranty) %>:</label></td>
-    <td class="data"> <%= f.text_field(:warranty, :size => 10, :class => "datepicker")  %> </td>
+    <td class="data"> <%= f.date_select(:warranty, :prompt => { :day => t(:day), :month => t(:month), :year => t(:year) })  %> </td>
   </tr>
   <tr>
     <td class="caption"><label for="name"><%= f.label(:location) %>:</label></td>
@@ -70,5 +70,5 @@
     input.focus();
   }
   
-  $('.datepicker').datepicker();
+  $('.datepicker').datepicker({"format": "yyyy-mm-dd"});
 </script>

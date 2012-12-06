@@ -2,7 +2,6 @@ class SubnetsController < ApplicationController
   PER_PAGE = 10
 
   before_filter :has_logged_in
-  
   def index
     list
     render('list')
@@ -13,7 +12,7 @@ class SubnetsController < ApplicationController
     @subnet = Subnet.new
   end
 
-  def create    
+  def create
     @subnet = Subnet.new(params[:subnet])
     user = recheck_logged_in_user
     if is_editor
@@ -52,7 +51,11 @@ class SubnetsController < ApplicationController
   end
 
   def show
-    @subnet = Subnet.find(params[:id])
+    if params[:id] == nil
+      redirect_to('/')
+    else
+      @subnet = Subnet.find(params[:id])
+    end
   end
 
   def edit

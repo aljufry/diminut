@@ -23,6 +23,14 @@ class ServersController < ApplicationController
     @subnet = Subnet.find(params[:id])
     @server = Entry.new
   end
+  
+  def show
+    if params[:id] == nil
+      redirect_to('/')
+    else
+      @server = Entry.find(params[:id])
+    end    
+  end
 
   def create
     @subnet = Subnet.find(params[:id])
