@@ -74,7 +74,7 @@ class SubnetsController < ApplicationController
       flash[:info] = t(:deleted_successfully)
       redirect_to(:action => 'list')
     else
-      flash[:notice] = t(you_do_not_have_edit_privilege)
+      flash[:notice] = t(:you_do_not_have_edit_privilege)
       render('delete')
     end
   end

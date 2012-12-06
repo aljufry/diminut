@@ -1,10 +1,12 @@
 <% @page_title = t(:server) %>
 
 <div class="form">
-  <div class="name"><%= @server.server_name %></div>
+  <div class="name">
+    <%= @server.server_name %>
+  </div>
   <table class="item">
     <tr>
-      <td class="title"><%= t :name %>:</td>
+      <td class="title"><%= t :server_name %>:</td>
       <td><%= @server.server_name %></td>
     </tr>
     <tr>
@@ -28,6 +30,34 @@
       <td><%= @server.public_ip %></td>
     </tr>
     <tr>
+      <td class="title"><%= t :username %>:</td>
+      <td><%= @server.username %></td>
+    </tr>
+    <tr>
+      <td class="title"><%= t :password %>:</td>
+      <td><span id="password"><%= @server.password %></span></td>
+    </tr>
+    <tr>
+      <td class="title"><%= t :warranty %>:</td>
+      <td><%= @server.warranty != nil ? @server.warranty.to_s(:long) : '' %></td>
+    </tr>
+    <tr>
+      <td class="title"><%= t :location %>:</td>
+      <td><%= @server.location %></td>
+    </tr>
+    <tr>
+      <td class="title"><%= t :segment %>:</td>
+      <td><%= @server.segment %></td>
+    </tr>
+    <tr>
+      <td class="title"><%= t :application %>:</td>
+      <td><%= @server.application %></td>
+    </tr>
+    <tr>
+      <td class="title"><%= t :remarks %>:</td>
+      <td><%= @server.remarks %></td>
+    </tr>
+    <tr>
       <td class="title"><%= t :create_at %>:</td>
       <td><%= @server.created_at.to_s(:long) %></td>
     </tr>
@@ -38,12 +68,32 @@
     <tr>
       <td class="title"><%= t :create_by %>:</td>
       <td><%= @server.author.name.length > 0 ? @server.author.name : @server.author.username %></td>
-    </tr>    
+    </tr>
     <tr>
-      <td class="buttons" colspan="2">        
-        <%= link_to(t("list"), {:action => 'list'}, :class => "button") %>
-        <%= link_to(t("edit"), {:action => 'edit', :id => @subnet.id}, :class => "button") %>
-      </td>
+      <td class="buttons" colspan="2"> <%= link_to(t("list"), {:action => 'list', :id => @server.subnet.id}, :class => "button") %>
+      <%= link_to(t("edit"), {:action => 'edit', :id => @server.id}, :class => "button") %> </td>
     </tr>
   </table>
+  <script type="text/javascript">
+  
+    $(document).ready(function() {
+      try {
+        $('span#password').css('background-color', 'black');
+        $('span#password').css('border-radius', '3px');
+        $('span#password').css('cursor', 'default');
+        
+        $('span#password').mouseenter(function() {
+          $('span#password').css('background-color', 'transparent');
+        });
+        
+        $('span#password').mouseout(function() {
+          setTimeout("$('span#password').css('background-color', 'black');", 1000);
+        });
+      } catch (e) {
+        console.log(e);
+      }            
+    });
+    
+    
+  </script>
 </div>

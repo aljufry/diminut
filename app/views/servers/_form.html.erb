@@ -53,11 +53,11 @@
   </tr>
   
   <tr>
-    <td class="buttons" colspan="2"> 
+    <td class="buttons" colspan="2">
+      <%= link_to(t("list"), {:action => 'list', :id => @subnet.id}, :class => "button") %> 
       <%= submit_tag(t(:save)) %>
-      <% if false %>
-      <br/><br/><br/>      
-      <%= link_to(t("list"), {:action => 'list'}, :class => "button") %>
+      <% if @server.id %>
+      <br/><br/><br/>
       <%= link_to(t("delete"), {:action => 'delete', :id => @subnet.id}, :class => "button") %>
       <%= link_to(t("show"), {:action => 'show', :id => @subnet.id}, :class => "button") %>
       <% end %>
@@ -68,7 +68,5 @@
   var input = $("#server_server_name");
   if (input != null && input != undefined) {
     input.focus();
-  }
-  
-  $('.datepicker').datepicker({"format": "yyyy-mm-dd"});
+  }   
 </script>

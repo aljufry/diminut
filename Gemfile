@@ -24,7 +24,7 @@ gem 'jquery-rails'
 # by ehsun
 gem 'will_paginate'
 gem 'bootstrap-datepicker-rails'
-gem 'bootstrap-sass'
+#gem 'bootstrap-sass'  #we may remove this
 gem 'ipcalc'
 
 # To use ActiveModel has_secure_password

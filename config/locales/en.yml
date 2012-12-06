@@ -50,6 +50,7 @@ en:
   public_ip: "Public IP"
   reset_password: "Reset Password"
   save: "Save"
+  server: "Server"
   servers: "Servers"
   server_name: "Server Name"
   show: "Show"
