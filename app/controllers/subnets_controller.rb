@@ -24,7 +24,7 @@ class SubnetsController < ApplicationController
         render('new')
       end
     else
-      flash[:notice] = I18n.t('you_do_not_have_edit_privilege')
+      flash[:notice] = t(:you_do_not_have_edit_privilege)
       render('new')
     end
   end
@@ -41,7 +41,7 @@ class SubnetsController < ApplicationController
         render('edit')
       end
     else
-      flash[:notice] = I18n.t('you_do_not_have_edit_privilege')
+      flash[:notice] = t(:you_do_not_have_edit_privilege)
       render('edit')
     end
   end

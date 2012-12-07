@@ -2,6 +2,7 @@ class ServersController < ApplicationController
   PER_PAGE = 10
 
   before_filter :has_logged_in
+  
   def index
     redirect_to(:controller => 'subnets', :action => 'list')
   end
@@ -30,6 +31,47 @@ class ServersController < ApplicationController
     else
       @server = Entry.find(params[:id])
     end    
+  end
+  
+  def delete
+    @server = Entry.find(params[:id])
+  end
+
+  def destroy
+    @server = Entry.find(params[:id])
+    subnet = @server.subnet
+    user = recheck_logged_in_user
+    if is_editor
+      @server.destroy
+      flash[:info] = t(:deleted_successfully)
+      redirect_to(:action => 'list', :id => subnet.id)
+    else
+      flash[:notice] = t(:you_do_not_have_edit_privilege)
+      render('delete')
+    end
+  end
+
+  def edit
+    @server = Entry.find(params[:id])
+    @subnet = @server.subnet
+  end
+
+  def update
+    @server = Entry.find(params[:id])
+    subnet = @server.subnet
+    user = recheck_logged_in_user
+    if is_editor
+      @server.author = user
+      if @server.update_attributes(params[:server])
+        flash[:info] = t(:saved_successfully)
+        redirect_to(:action => 'list', :id => subnet.id)
+      else
+        render('edit')
+      end
+    else
+      flash[:notice] = t(:you_do_not_have_edit_privilege)
+      render('edit')
+    end
   end
 
   def create

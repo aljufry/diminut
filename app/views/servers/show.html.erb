@@ -70,8 +70,11 @@
       <td><%= @server.author.name.length > 0 ? @server.author.name : @server.author.username %></td>
     </tr>
     <tr>
-      <td class="buttons" colspan="2"> <%= link_to(t("list"), {:action => 'list', :id => @server.subnet.id}, :class => "button") %>
-      <%= link_to(t("edit"), {:action => 'edit', :id => @server.id}, :class => "button") %> </td>
+      <td class="buttons" colspan="2">
+      <%= link_to(t("list"), {:action => 'list', :id => @server.subnet.id}, :class => "button") %>
+      <%= link_to(t("edit"), {:action => 'edit', :id => @server.id}, :class => "button") %>
+      <%= link_to(t("delete"), {:action => 'delete', :id => @server.id}, :class => "button") %> 
+      </td>
     </tr>
   </table>
   <script type="text/javascript">
